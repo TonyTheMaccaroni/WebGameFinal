@@ -6,8 +6,8 @@ var Game = {
 
     preload : function() 
     {
-        game.load.image('snake', './img/snake.png');
-        game.load.image('fruit', './img/fruit.png');
+        game.load.image('snake', 'resources/assets/snake.png');
+        game.load.image('fruit', 'resources/assets/fruit.png');
     },
 
     create : function() 
