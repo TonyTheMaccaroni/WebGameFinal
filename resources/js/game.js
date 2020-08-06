@@ -31,7 +31,7 @@ var Game = {
 
         keyControls = game.input.keyboard.createCursorKeys();
 
-        game.stage.backgroundColor = '#9BBC0F';
+        game.stage.backgroundColor = '#FF0000';
 
         for(var i = 0; i < 10; i++){
             snake[i] = game.add.sprite(150+i*grid, 150, 'snake');  // Parameters are (X coordinate, Y coordinate, image)
