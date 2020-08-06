@@ -8,6 +8,10 @@ var Game = {
     {
         game.load.image('snake', 'resources/assets/snake.png');
         game.load.image('fruit', 'resources/assets/fruit.png');
+        game.load.audio("audio_eat", "resources/assets/sounds/slurp.mp3")
+        game.load.audio("audio_dead", "resources/assets/sounds/dead.mp3")
+        game.load.audio("audio_hitmyself", "resources/assets/sounds/hitmyself.mp3")
+
     },
 
     create : function() 
@@ -20,7 +24,10 @@ var Game = {
         updateDelay = 0;               
         direction = 'right';            
         new_direction = null;           
-        addNew = false;                 
+        addNew = false;   
+        this.eatSound = this.sound.add("audio_eat"); 
+        this.deadSound = this.sound.add("audio_dead");
+        this.hitmyselfSound = this.sound.add("audio_hitmyself");           
 
         keyControls = game.input.keyboard.createCursorKeys();
 
@@ -125,6 +132,7 @@ var Game = {
         var randomX = Math.floor(Math.random() * 35) * grid,
             randomY = Math.floor(Math.random() * 25) * grid;
 
+
         fruit = game.add.sprite(randomX, randomY, 'fruit');
     },
 
@@ -139,6 +147,8 @@ var Game = {
 
 
                 fruit.destroy();
+
+                this.eatSound.play();
 
 
                 this.generatefruit();
@@ -161,6 +171,7 @@ var Game = {
         {
             if(head.x == snake[i].x && head.y == snake[i].y)
             {
+                this.hitmyselfSound.play();
 
                 game.state.start('Game_Over');
             }
@@ -173,6 +184,7 @@ var Game = {
 
         if(head.x >= 640 || head.x < 0 || head.y >= 400 || head.y < 0)
         {
+            this.deadSound.play();
 
             game.state.start('Game_Over');
         }
