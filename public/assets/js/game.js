@@ -6,11 +6,11 @@ var Game = {
 
     preload : function() 
     {
-        game.load.image('snake', 'resources/assets/snake.png');
-        game.load.image('fruit', 'resources/assets/fruit.png');
-        game.load.audio("audio_eat", "resources/assets/sounds/slurp.mp3")
-        game.load.audio("audio_dead", "resources/assets/sounds/dead.mp3")
-        game.load.audio("audio_hitmyself", "resources/assets/sounds/hitmyself.mp3")
+        game.load.image('snake', 'assets/images/snake.png');
+        game.load.image('fruit', 'assets/images/fruit.png');
+        game.load.audio("audio_eat", "assets/sounds/slurp.mp3")
+        game.load.audio("audio_dead", "assets/sounds/dead.mp3")
+        game.load.audio("audio_hitmyself", "assets/sounds/hitmyself.mp3")
 
     },
 
