@@ -3,14 +3,14 @@ var snake, fruit, grid, score, speed,
     addNew, keyControls, scoreTextValue, speedTextValue, textStyle_Key, textStyle_Value;
 
 var Game = {
-
+//preload screen for usuers to see images and hear audio
     preload : function()
     {
-        game.load.image('snake', 'resources/assets/snake.png');
-        game.load.image('fruit', 'resources/assets/fruit.png');
-        game.load.audio("audio_eat", "resources/assets/sounds/slurp.mp3")
-        game.load.audio("audio_dead", "resources/assets/sounds/dead.mp3")
-        game.load.audio("audio_hitmyself", "resources/assets/sounds/hitmyself.mp3")
+        game.load.image('snake', 'assets/images/snake.png');
+        game.load.image('fruit', 'assets/images/fruit.png');
+        game.load.audio("audio_eat", "assets/sounds/slurp.mp3")
+        game.load.audio("audio_dead", "assets/sounds/dead.mp3")
+        game.load.audio("audio_hitmyself", "assets/sounds/hitmyself.mp3")
 
     },
 
@@ -31,7 +31,7 @@ var Game = {
 
         keyControls = game.input.keyboard.createCursorKeys();
 
-        game.stage.backgroundColor = '#a32b03';
+        game.stage.backgroundColor = '#FF0000';
 
         for(var i = 0; i < 10; i++){
             snake[i] = game.add.sprite(150+i*grid, 150, 'snake');  // Parameters are (X coordinate, Y coordinate, image)
@@ -158,12 +158,9 @@ var Game = {
 
 
                 scoreTextValue.text = score.toString();
-                var color = ['#ADD8E6', '#b19cd9', '#FFCCCB', '#90EE90', '#FFA500', '#e0aa67'];
-                if (score  % 5 === 0){
-                  game.stage.backgroundColor = color[Math.floor(color.length * Math.random())];
 
 
-                 }
+
 
             }
         }
