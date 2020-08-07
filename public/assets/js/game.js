@@ -3,7 +3,7 @@ var snake, fruit, grid, score, speed,
     addNew, keyControls, scoreTextValue, speedTextValue, textStyle_Key, textStyle_Value;
 
 var Game = {
-//preload screen for usuers to see images and hear audio 
+
     preload : function() 
     {
         game.load.image('snake', 'assets/images/snake.png');
