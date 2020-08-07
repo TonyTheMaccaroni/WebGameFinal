@@ -2,7 +2,7 @@ var Menu = {
 
     preload : function() 
     {
-        game.load.image('start', 'assets/images/start.png');
+        game.load.image('start', 'resources/assets/start.png');
     },
 
     create: function () 
